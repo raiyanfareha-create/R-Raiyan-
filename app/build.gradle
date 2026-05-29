@@ -1,0 +1,31 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.arraiyan.sosguard'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.arraiyan.sosguard"
+        minSdk 26 // ব্যাকগ্রাউন্ড সার্ভিসের জন্য মিনিমাম অ্যান্ড্রয়েড ৮.০ প্রয়োজন
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    
+    // গুগলের নিখুঁত জিপিএস লোকেশন সার্ভিসের লাইব্রেরি
+    implementation 'com.google.android.gms:play-services-location:21.0.1'
+}
